@@ -1,0 +1,38 @@
+Open Systems Interconnection
+
+1. Physical Layer
+Transmits raw bit stream over physical medium.
+Cables, switches - 0100001111101.
+Signal convention to distinguish 1 and 0.
+Simplex, Half Duplex, Full Duplex
+
+2. Datalink Layer
+Defines data formant over network.
+Breaks packets into frames, flow control, error control in intra-network comms.
+
+3. Network Layer
+Decides physical path the data will take.
+Breaks segments into packets and reassembles them on recv device.
+Routing happens here, Subnet.
+
+4.Transport Layer
+Transmits data using TCP , UDP.
+End-2-End communication b/w two devices.Breaks Session layer data into chunks (segments) 
+and is responsible for reassembling segments into data that session layer can consume.
+Flow control to balance fast vs slow internet speed. Error control for lost segments
+restransmission (Inter-Network comms).
+
+5. Session Layer
+Maintains connection and is responsible for controlling ports , sessions.
+Opening and closing communication between devices.
+It ensures that session stays open long enough to transfer all the data being
+exchanged and then closes connection.
+It also synchronized data transfer with checkpoints. 
+
+6. Presentation Layer
+Ensures data is in a usable format and data encryption happens here.
+Translation, encryption and compression of data.
+
+7. Application Layer
+Human-Computer interaction layer, apps access the network services.
+HTTP, SMTP, Telnet, FTP, NFS, DNS, DHCP

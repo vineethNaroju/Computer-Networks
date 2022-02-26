@@ -1,0 +1,20 @@
+*** Data Flow through OSI Model ***
+
+Data must travel through seven layers of OSI on both send and recv end.
+
+Mr. Cooper wants to send Ms. Palmer an email. Mr. Cooper composes his message in an email application on his laptop and then hits ‘send’. 
+His email application will pass his email message over to the application layer, which will pick a protocol (SMTP) and pass the data along to the presentation layer.
+The presentation layer will then compress the data and then it will hit the session layer, which will initialize the communication session.
+
+The data will then hit the sender’s transportation layer where it will be segmented, then those segments will be broken up into packets at the network layer, 
+which will be broken down even further into frames at the data link layer. The data link layer will then deliver those frames to the physical layer, 
+which will convert the data into a bitstream of 1s and 0s and send it through a physical medium, such as a cable.
+
+Once Ms. Palmer’s computer receives the bit stream through a physical medium (such as her wifi), the data will flow through the same series of layers 
+on her device, but in the opposite order. First the physical layer will convert the bitstream from 1s and 0s into frames that get passed to the data link layer. 
+The data link layer will then reassemble the frames into packets for the network layer. The network layer will then make segments out of the packets for the 
+transport layer, which will reassemble the segments into one piece of data.
+
+The data will then flow into the receiver's session layer, which will pass the data along to the presentation layer and then end the communication session. 
+The presentation layer will then remove the compression and pass the raw data up to the application layer. The application layer will then feed the 
+human-readable data along to Ms. Palmer’s email software, which will allow her to read Mr. Cooper’s email on her laptop screen.

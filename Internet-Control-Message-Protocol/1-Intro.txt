@@ -1,0 +1,25 @@
+
+*** About me ***
+Network layer protocol to diagnose network communication issues in rotuters.
+It can also be used in DDOS attacks.
+
+ICMP is a connectionless protocol, no need of opening a connection like in TCP.
+It also doesn't allow for targeting a specific port on a device.
+
+*** Layer-3 DDOS Attacks ***
+
+ICMP Flood Attack
+Attacker overwhelm a target device with ICMP echo-request packets. The target has to process and 
+respond to each packet, consuming its cpu and legit users can't be serviced.
+
+Ping of Death Attack
+Attacker sends a large ping packet and the target re-assembles fragmented data packet into its
+maximum-exceeding size - which causes buffer overflow.
+Old network equipment is susceptible to it.
+
+Smurf Attack
+Attacker sends an ICMP packet with spoofed source IP address. Device will reply to spoofed IP and
+flood victim with unwanted ICMP packets.
+Possible in legacy devices.
+
+Attackers can alos use GRE (Generic Routing Encapsulation) packets.
