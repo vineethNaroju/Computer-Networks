@@ -1,0 +1,57 @@
+D:\Repos\Computer-Networks>tracert 8.8.8.8
+
+Tracing route to dns.google [8.8.8.8]
+over a maximum of 30 hops:
+
+  1     1 ms    <1 ms    <1 ms  reliance.reliance [192.168.29.1] -> LOCAL ROUTER
+  2     4 ms     2 ms     2 ms  10.9.16.1 -> POP ROUTER
+  3    14 ms    15 ms    13 ms  172.31.1.32
+  4    12 ms    13 ms    13 ms  192.168.65.150
+  5    14 ms    14 ms    14 ms  172.26.74.5
+  6    12 ms    13 ms    14 ms  172.26.77.227
+  7    14 ms    14 ms    14 ms  192.168.65.140
+  8    14 ms    12 ms    13 ms  192.168.65.141
+  9    21 ms    22 ms    22 ms  172.31.2.65
+ 10    24 ms    21 ms    22 ms  74.125.51.4
+ 11    23 ms    24 ms    25 ms  209.85.142.223
+ 12    26 ms    24 ms    22 ms  216.239.54.197
+ 13    21 ms    22 ms    30 ms  dns.google [8.8.8.8]
+
+Trace complete.
+
+<><><><><><><><><><<><><><<><><><><><><><><><><><><><><><>><><><><><><><><><<
+
+column-1
+hop number / number of hops 3 data packets were pushed through to reach destination.
+
+column-2,3,4
+RTT in ms, to check for consistency - traceroute sends 3 packets to each hop.
+
+column-5
+name / ip-address of routers on every hop from my computer to destination.
+it also lists domain name of the router
+
+**** How to Read Rows *********
+
+1. Local router
+use ipconfig to find default gateway ip.
+
+2. POP router 
+Point of presence helps to establish connection with internet.
+
+3. Source Tier 2 ISP Network
+Regional ISP to exchange traffic directly.
+
+4. IXP 
+Internet Exchange Point - ISPs and other network providers connect to exahange traffic.
+Admins make routing decisions based on hop counts, etc.
+
+5. Tier-1 ISP network
+Backbone of internet - they own infra to carry most of traffic themselves.
+ex: AT&T, Sprint, Verizon.
+
+6. Destination Tier-2 ISP Network
+Regional ISP closest to destination data packet.
+
+7. Destination Web server
+Last line before "Trace complete" message.
