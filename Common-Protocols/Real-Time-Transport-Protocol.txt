@@ -1,0 +1,6 @@
+For audio + video over IP networks.
+ex WebRTC, tv services.
+
+It runs over UDP. RTP control protocol is used to monitor transmission stats and quality of service.
+
+IP multicast, jitter compensation, detection of packet loss and out-of-order delivery.

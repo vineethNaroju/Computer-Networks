@@ -1,0 +1,63 @@
+Reliable, ordered, error-checked delivery of octets b/w apps
+it's connection oriented and 3-way handshake is established before data transmission.
+Network congestion avoidance.
+
+*** Cons ***
+DOS, connection hijacking, TCP veto, reset attack.
+
+*** TCP Segmenet ***
+header : {
+    source_port, destination_port
+    sequence_number, window_size - for flow control,
+    checksum - source ip, destination ip, etc
+}
+
+*** Conn Establishment ***
+
+SYN => client -> sequence_number_A -> server
+SYN-ACK => server -> sequence_number_A + 1, sequence_number_B -> client
+ACK => client -> sequence_number_B + 1 -> server
+
+FUll- duplex done.
+
+*** Conn Termination ***
+4-way handshake,
+FIN then ACK for ending it's own half-connection, wait for a timeout and local port is NA for new connections.
+to prevent delayed packets from previous connection in new connection.
+
+*** CONN STATE ***
+
+An entry in a table to map a session to a running OS provess.
+TCP packets dont have session identifier, both endpoints identify the session using the client's
+address and port.
+
+Packet -> lookup table -> destination process.
+Each entry is called TCB / Tranmission COntrol Block (IP and port), status, buffer, etc.
+
+*** DATA Transfer ***
+
+Ordered data transfer -> dest re-arranges segements based on sequence_number
+Re-transmission of lost packets -> any non-ack packets are re-sent
+Error-free transfer -> corrupted packets are marked as lost and re-tried.
+Flow-control -> Limits sender transfer rate and recv host hints sender, sliding window + persist timer.
+Congestion-control -> Lost packets trigger reduction in delivery rate., slow-start, fast retransmit, fast recovery.
+
+*** Vulnerability ***
+DOS
+spoof IP address + repeated SYN packets + ACK packets
+
+Connection Hijacking
+guess seq number and make send / recv accept a segement as next segment in stream.
+
+TCP veto
+Predict size of next packet and impersonate legit packet. It's hard to detect.
+
+*** TCP Ports ***
+FTP - 20 and 21
+SSH - 22
+Telnet - 23
+SMTP - 25
+HTTP pver SSL/TLS - 443
+HTTP - 80
+
+HTTP/3, QUIC is used over TCP.

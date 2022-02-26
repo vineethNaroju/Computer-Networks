@@ -1,0 +1,7 @@
+Handshake with asymmetric cipher and share session specific key using symmetric cipher.
+
+client -> req TLS-server for connection along with list of ciphers and hash funcs -> server
+server -> cipher + hash func + digital certificate (server name, CA, public key) -> client
+client confirms and generates session keys using encrypt a random number of use Diffie-Hellman exchange.
+
+Handshake is done and message are encrypted and decrypted with session key until connection is close.
